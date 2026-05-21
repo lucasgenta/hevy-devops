@@ -1,0 +1,1177 @@
+# Exercise-to-specific-muscle-head mapping
+# Each entry is a list of keyword/pattern → [muscle heads with activation]
+#
+# activation levels: primary, secondary, tertiary
+# Each muscle head: {"name": "...", "role": "...", "activation": "..."}
+
+patterns:
+  # ============================================================
+  # CHEST — Upper (clavicular), Middle (sternal), Lower (sternal inferior)
+  # ============================================================
+  - keywords: ["incline"]
+    muscle: chest
+    heads:
+      - {name: "upper_chest", role: "primary", activation: "high"}
+      - {name: "middle_chest", role: "secondary", activation: "moderate"}
+      - {name: "front_delt", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["decline"]
+    muscle: chest
+    heads:
+      - {name: "lower_chest", role: "primary", activation: "high"}
+      - {name: "middle_chest", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "secondary", activation: "moderate"}
+
+  - keywords: ["fly", "crossover", "pec deck"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "high"}
+      - {name: "upper_chest", role: "tertiary", activation: "low"}
+      - {name: "front_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["dumbbell pullover", "pullover"]
+    muscle: chest
+    heads:
+      - {name: "lower_chest", role: "primary", activation: "high"}
+      - {name: "lats", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["push up", "pushup", "press up"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "high"}
+      - {name: "upper_chest", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "front_delt", role: "secondary", activation: "moderate"}
+
+  # Default chest (bench press, chest press etc.)
+  - keywords: ["bench press", "chest press"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "high"}
+      - {name: "upper_chest", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "front_delt", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # TRICEPS — Long head, Lateral head, Medial head
+  # ============================================================
+  - keywords: ["tricep pushdown", "triceps pushdown", "cable pushdown"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_lateral_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_long_head", role: "secondary", activation: "moderate"}
+
+  - keywords: ["overhead triceps", "overhead extension", "french press"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "very_high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["skullcrusher", "skull crusher", "lying triceps"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["close grip bench"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_lateral_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+      - {name: "middle_chest", role: "secondary", activation: "moderate"}
+
+  - keywords: ["tricep kickback", "triceps kickback"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_lateral_head", role: "primary", activation: "very_high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["bench dip", "triceps dip", "dip"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_lateral_head", role: "primary", activation: "high"}
+      - {name: "lower_chest", role: "secondary", activation: "moderate"}
+
+  - keywords: ["diamond push up"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_lateral_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+      - {name: "middle_chest", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # SHOULDERS — Anterior, Lateral, Posterior delt
+  # ============================================================
+  - keywords: ["lateral raise", "side raise", "upright row"]
+    muscle: shoulders
+    heads:
+      - {name: "lateral_delt", role: "primary", activation: "very_high"}
+      - {name: "anterior_delt", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "tertiary", activation: "low"}
+
+  - keywords: ["front raise"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "very_high"}
+      - {name: "lateral_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["face pull"]
+    muscle: shoulders
+    heads:
+      - {name: "posterior_delt", role: "primary", activation: "very_high"}
+      - {name: "traps_mid", role: "secondary", activation: "moderate"}
+      - {name: "traps_lower", role: "tertiary", activation: "low"}
+
+  - keywords: ["reverse fly", "rear delt"]
+    muscle: shoulders
+    heads:
+      - {name: "posterior_delt", role: "primary", activation: "very_high"}
+      - {name: "traps_mid", role: "secondary", activation: "moderate"}
+      - {name: "upper_back", role: "tertiary", activation: "low"}
+
+  - keywords: ["arnold press"]
+    muscle: shoulders
+    heads:
+      - {name: "lateral_delt", role: "primary", activation: "high"}
+      - {name: "anterior_delt", role: "primary", activation: "high"}
+      - {name: "posterior_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["shoulder press", "overhead press", "military press", "ohp"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "high"}
+      - {name: "lateral_delt", role: "primary", activation: "high"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # BICEPS — Long head, Short head, Brachialis
+  # ============================================================
+  - keywords: ["preacher curl"]
+    muscle: biceps
+    heads:
+      - {name: "biceps_short_head", role: "primary", activation: "high"}
+      - {name: "biceps_long_head", role: "secondary", activation: "moderate"}
+
+  - keywords: ["incline curl", "bayesian curl"]
+    muscle: biceps
+    heads:
+      - {name: "biceps_long_head", role: "primary", activation: "very_high"}
+      - {name: "biceps_short_head", role: "secondary", activation: "moderate"}
+
+  - keywords: ["concentration curl"]
+    muscle: biceps
+    heads:
+      - {name: "biceps_short_head", role: "primary", activation: "high"}
+      - {name: "biceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["hammer curl"]
+    muscle: biceps
+    heads:
+      - {name: "brachialis", role: "primary", activation: "very_high"}
+      - {name: "brachioradialis", role: "primary", activation: "high"}
+      - {name: "biceps_long_head", role: "secondary", activation: "moderate"}
+      - {name: "biceps_short_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["reverse curl"]
+    muscle: biceps
+    heads:
+      - {name: "brachioradialis", role: "primary", activation: "very_high"}
+      - {name: "brachialis", role: "secondary", activation: "moderate"}
+
+  - keywords: ["21s", "21's"]
+    muscle: biceps
+    heads:
+      - {name: "biceps_long_head", role: "primary", activation: "high"}
+      - {name: "biceps_short_head", role: "primary", activation: "high"}
+      - {name: "brachialis", role: "secondary", activation: "moderate"}
+
+  # Default bicep curl
+  - keywords: ["bicep curl", "curl"]
+    muscle: biceps
+    heads:
+      - {name: "biceps_long_head", role: "primary", activation: "high"}
+      - {name: "biceps_short_head", role: "primary", activation: "high"}
+      - {name: "brachialis", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # QUADRICEPS — Rectus femoris, Vastus lateralis, Vastus medialis, Vastus intermedius
+  # ============================================================
+  - keywords: ["leg extension"]
+    muscle: quadriceps
+    heads:
+      - {name: "rectus_femoris", role: "primary", activation: "very_high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "vastus_lateralis", role: "secondary", activation: "moderate"}
+      - {name: "vastus_intermedius", role: "secondary", activation: "moderate"}
+
+  - keywords: ["squat"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "secondary", activation: "moderate"}
+      - {name: "vastus_intermedius", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["lunge"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["leg press"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "secondary", activation: "moderate"}
+      - {name: "vastus_intermedius", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "tertiary", activation: "low"}
+      - {name: "hamstrings", role: "tertiary", activation: "low"}
+
+  - keywords: ["bulgarian split squat"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_medialis", role: "primary", activation: "very_high"}
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["step up"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "primary", activation: "high"}
+      - {name: "vastus_lateralis", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["hack squat"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_lateralis", role: "primary", activation: "very_high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # HAMSTRINGS — Biceps femoris, Semitendinosus, Semimembranosus
+  # ============================================================
+  - keywords: ["leg curl", "leg curl"]
+    muscle: hamstrings
+    heads:
+      - {name: "biceps_femoris", role: "primary", activation: "high"}
+      - {name: "semitendinosus", role: "primary", activation: "high"}
+      - {name: "semimembranosus", role: "primary", activation: "high"}
+
+  - keywords: ["romanian deadlift", "rdl"]
+    muscle: hamstrings
+    heads:
+      - {name: "biceps_femoris", role: "primary", activation: "very_high"}
+      - {name: "semitendinosus", role: "primary", activation: "high"}
+      - {name: "semimembranosus", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+
+  - keywords: ["good morning"]
+    muscle: hamstrings
+    heads:
+      - {name: "biceps_femoris", role: "primary", activation: "high"}
+      - {name: "semitendinosus", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["nordic hamstring"]
+    muscle: hamstrings
+    heads:
+      - {name: "biceps_femoris", role: "primary", activation: "very_high"}
+      - {name: "semitendinosus", role: "primary", activation: "very_high"}
+      - {name: "semimembranosus", role: "primary", activation: "very_high"}
+
+  - keywords: ["glute ham raise"]
+    muscle: hamstrings
+    heads:
+      - {name: "biceps_femoris", role: "primary", activation: "very_high"}
+      - {name: "semitendinosus", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "secondary", activation: "high"}
+
+  # ============================================================
+  # GLUTES — Glute max, Glute med, Glute min
+  # ============================================================
+  - keywords: ["hip thrust", "glute bridge"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "glute_med", role: "secondary", activation: "moderate"}
+      - {name: "hamstrings", role: "tertiary", activation: "low"}
+
+  - keywords: ["hip abduction"]
+    muscle: glutes
+    heads:
+      - {name: "glute_med", role: "primary", activation: "very_high"}
+      - {name: "glute_min", role: "primary", activation: "high"}
+
+  - keywords: ["hip adduction"]
+    muscle: glutes
+    heads:
+      - {name: "adductors", role: "primary", activation: "very_high"}
+
+  - keywords: ["cable pull through"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "erector_spinae", role: "tertiary", activation: "low"}
+
+  - keywords: ["deadlift"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "hamstrings", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "primary", activation: "high"}
+      - {name: "traps_upper", role: "tertiary", activation: "low"}
+
+  - keywords: ["bird dog", "clam"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "moderate"}
+      - {name: "glute_med", role: "primary", activation: "moderate"}
+      - {name: "erector_spinae", role: "secondary", activation: "low"}
+
+  # ============================================================
+  # BACK / LATS — Upper lat, Lower lat, Rhomboids, Erector spinae
+  # ============================================================
+  - keywords: ["pull up", "pullup", "chin up", "chinup"]
+    muscle: lats
+    heads:
+      - {name: "lats_upper", role: "primary", activation: "high"}
+      - {name: "lats_lower", role: "primary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+      - {name: "traps_lower", role: "tertiary", activation: "low"}
+
+  - keywords: ["lat pulldown", "lat pull down"]
+    muscle: lats
+    heads:
+      - {name: "lats_upper", role: "primary", activation: "high"}
+      - {name: "lats_lower", role: "primary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["row"]
+    muscle: upper_back
+    heads:
+      - {name: "rhomboids", role: "primary", activation: "high"}
+      - {name: "traps_mid", role: "primary", activation: "high"}
+      - {name: "lats_upper", role: "secondary", activation: "moderate"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+      - {name: "posterior_delt", role: "secondary", activation: "moderate"}
+
+  - keywords: ["face pull"]
+    muscle: upper_back
+    heads:
+      - {name: "traps_mid", role: "primary", activation: "high"}
+      - {name: "traps_lower", role: "secondary", activation: "moderate"}
+      - {name: "posterior_delt", role: "primary", activation: "high"}
+
+  - keywords: ["shrug"]
+    muscle: traps
+    heads:
+      - {name: "traps_upper", role: "primary", activation: "very_high"}
+      - {name: "traps_mid", role: "secondary", activation: "moderate"}
+
+  - keywords: ["back extension", "hyperextension"]
+    muscle: lower_back
+    heads:
+      - {name: "erector_spinae", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # ABS — Upper rectus, Lower rectus, Obliques, Transverse abdominis
+  # ============================================================
+  - keywords: ["crunch"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "tertiary", activation: "low"}
+
+  - keywords: ["leg raise", "knee raise", "hanging raise"]
+    muscle: abdominals
+    heads:
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "upper_rectus_abdominis", role: "tertiary", activation: "low"}
+      - {name: "hip_flexors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["russian twist", "cable twist", "woodchop", "windshield"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "very_high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  - keywords: ["pallof press"]
+    muscle: abdominals
+    heads:
+      - {name: "transverse_abdominis", role: "primary", activation: "very_high"}
+      - {name: "obliques", role: "secondary", activation: "moderate"}
+
+  - keywords: ["plank"]
+    muscle: abdominals
+    heads:
+      - {name: "transverse_abdominis", role: "primary", activation: "high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "obliques", role: "secondary", activation: "moderate"}
+
+  - keywords: ["ab wheel", "ab roller"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "obliques", role: "secondary", activation: "moderate"}
+      - {name: "lats", role: "tertiary", activation: "low"}
+
+  - keywords: ["ab scissors", "flutter kick"]
+    muscle: abdominals
+    heads:
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "hip_flexors", role: "secondary", activation: "high"}
+
+  - keywords: ["bicycle crunch"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "high"}
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # CALVES — Gastrocnemius (medial/lateral), Soleus
+  # ============================================================
+  - keywords: ["standing calf raise", "donkey calf"]
+    muscle: calves
+    heads:
+      - {name: "gastrocnemius_medial", role: "primary", activation: "high"}
+      - {name: "gastrocnemius_lateral", role: "primary", activation: "high"}
+      - {name: "soleus", role: "secondary", activation: "moderate"}
+
+  - keywords: ["seated calf raise"]
+    muscle: calves
+    heads:
+      - {name: "soleus", role: "primary", activation: "very_high"}
+      - {name: "gastrocnemius", role: "tertiary", activation: "low"}
+
+  - keywords: ["calf press"]
+    muscle: calves
+    heads:
+      - {name: "gastrocnemius_medial", role: "primary", activation: "high"}
+      - {name: "gastrocnemius_lateral", role: "primary", activation: "high"}
+      - {name: "soleus", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # FOREARMS
+  # ============================================================
+  - keywords: ["wrist curl"]
+    muscle: forearms
+    heads:
+      - {name: "wrist_flexors", role: "primary", activation: "very_high"}
+      - {name: "brachioradialis", role: "tertiary", activation: "low"}
+
+  - keywords: ["wrist extension"]
+    muscle: forearms
+    heads:
+      - {name: "wrist_extensors", role: "primary", activation: "very_high"}
+
+  - keywords: ["wrist roller"]
+    muscle: forearms
+    heads:
+      - {name: "wrist_flexors", role: "primary", activation: "high"}
+      - {name: "wrist_extensors", role: "primary", activation: "high"}
+
+  # ============================================================
+  # TRICEPS — Additional missing patterns
+  # ============================================================
+  - keywords: ["jm press"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_long_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+      - {name: "middle_chest", role: "secondary", activation: "low"}
+
+  - keywords: ["triceps extension", "tricep extension"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["triceps pressdown", "tricep pressdown"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_lateral_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["triceps rope pushdown", "rope pushdown"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_lateral_head", role: "primary", activation: "very_high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["wide-elbow triceps", "wide elbow triceps"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "primary", activation: "high"}
+      - {name: "triceps_lateral_head", role: "secondary", activation: "moderate"}
+
+  - keywords: ["seated triceps press"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["single arm tricep extension"]
+    muscle: triceps
+    heads:
+      - {name: "triceps_long_head", role: "primary", activation: "high"}
+      - {name: "triceps_medial_head", role: "secondary", activation: "moderate"}
+      - {name: "triceps_lateral_head", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # CHEST — Additional missing patterns
+  # ============================================================
+  - keywords: ["floor press"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "moderate"}
+      - {name: "triceps", role: "primary", activation: "high"}
+      - {name: "front_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["squeeze press", "hex press"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "very_high"}
+      - {name: "triceps", role: "tertiary", activation: "low"}
+
+  - keywords: ["plate press", "plate squeeze", "svend press"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "very_high"}
+      - {name: "front_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["around the world"]
+    muscle: chest
+    heads:
+      - {name: "middle_chest", role: "primary", activation: "high"}
+      - {name: "front_delt", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # SHOULDERS — Additional missing patterns
+  # ============================================================
+  - keywords: ["band pullaparts", "band pull apart"]
+    muscle: shoulders
+    heads:
+      - {name: "posterior_delt", role: "primary", activation: "very_high"}
+      - {name: "traps_mid", role: "secondary", activation: "moderate"}
+      - {name: "traps_lower", role: "tertiary", activation: "low"}
+
+  - keywords: ["y raise"]
+    muscle: shoulders
+    heads:
+      - {name: "posterior_delt", role: "primary", activation: "high"}
+      - {name: "traps_lower", role: "primary", activation: "high"}
+      - {name: "traps_mid", role: "secondary", activation: "moderate"}
+
+  - keywords: ["push press"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "high"}
+      - {name: "lateral_delt", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "quadriceps", role: "secondary", activation: "low"}
+
+  - keywords: ["landmine press"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "very_high"}
+      - {name: "middle_chest", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "tertiary", activation: "low"}
+
+  - keywords: ["overhead plate raise", "plate raise"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "very_high"}
+      - {name: "lateral_delt", role: "tertiary", activation: "low"}
+
+  - keywords: ["kettlebell around the world", "kettlebell halo"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "moderate"}
+      - {name: "lateral_delt", role: "primary", activation: "moderate"}
+      - {name: "posterior_delt", role: "primary", activation: "moderate"}
+
+  - keywords: ["shoulder taps"]
+    muscle: shoulders
+    heads:
+      - {name: "anterior_delt", role: "primary", activation: "moderate"}
+      - {name: "lateral_delt", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "high"}
+
+  # ============================================================
+  # ABS — Additional missing patterns
+  # ============================================================
+  - keywords: ["sit up", "situps"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "hip_flexors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["dead bug"]
+    muscle: abdominals
+    heads:
+      - {name: "transverse_abdominis", role: "primary", activation: "very_high"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "low"}
+
+  - keywords: ["dragon flag"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "lats", role: "secondary", activation: "moderate"}
+
+  - keywords: ["hollow rock"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "hip_flexors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["jackknife", "jack knife"]
+    muscle: abdominals
+    heads:
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "hip_flexors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["l-sit", "l sit"]
+    muscle: abdominals
+    heads:
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "hip_flexors", role: "primary", activation: "high"}
+      - {name: "quadriceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["side bend"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "very_high"}
+      - {name: "quadratus_lumborum", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "tertiary", activation: "low"}
+
+  - keywords: ["landmine 180"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "very_high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+
+  - keywords: ["toes to bar"]
+    muscle: abdominals
+    heads:
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "very_high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "hip_flexors", role: "secondary", activation: "high"}
+      - {name: "lats", role: "tertiary", activation: "low"}
+
+  - keywords: ["v up", "v-up"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "hip_flexors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["spiderman"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  - keywords: ["torso rotation"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "low"}
+
+  - keywords: ["heel taps"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "high"}
+      - {name: "upper_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  - keywords: ["elbow to knee"]
+    muscle: abdominals
+    heads:
+      - {name: "obliques", role: "primary", activation: "high"}
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  - keywords: ["toe touch"]
+    muscle: abdominals
+    heads:
+      - {name: "upper_rectus_abdominis", role: "primary", activation: "high"}
+      - {name: "lower_rectus_abdominis", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # GLUTES — Additional missing patterns
+  # ============================================================
+  - keywords: ["glute kickback", "glute kick back"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "tertiary", activation: "low"}
+
+  - keywords: ["fire hydrants"]
+    muscle: glutes
+    heads:
+      - {name: "glute_med", role: "primary", activation: "very_high"}
+      - {name: "glute_min", role: "primary", activation: "high"}
+
+  - keywords: ["frog pumps"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "adductors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["lateral band walks"]
+    muscle: glutes
+    heads:
+      - {name: "glute_med", role: "primary", activation: "very_high"}
+      - {name: "glute_min", role: "primary", activation: "high"}
+      - {name: "abductors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["rear kick"]
+    muscle: glutes
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # QUADS — Additional missing patterns
+  # ============================================================
+  - keywords: ["box jump"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "secondary", activation: "high"}
+      - {name: "calves", role: "tertiary", activation: "low"}
+
+  - keywords: ["wall sit"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["frog jumps"]
+    muscle: quadriceps
+    heads:
+      - {name: "vastus_lateralis", role: "primary", activation: "high"}
+      - {name: "vastus_medialis", role: "primary", activation: "high"}
+      - {name: "rectus_femoris", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+      - {name: "calves", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # LATS — Additional missing patterns
+  # ============================================================
+  - keywords: ["straight arm pulldown"]
+    muscle: lats
+    heads:
+      - {name: "lats_lower", role: "primary", activation: "very_high"}
+      - {name: "lats_upper", role: "secondary", activation: "moderate"}
+      - {name: "triceps_long_head", role: "tertiary", activation: "low"}
+
+  - keywords: ["kneeling pulldown"]
+    muscle: lats
+    heads:
+      - {name: "lats_upper", role: "primary", activation: "high"}
+      - {name: "lats_lower", role: "primary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["vertical traction"]
+    muscle: lats
+    heads:
+      - {name: "lats_upper", role: "primary", activation: "high"}
+      - {name: "lats_lower", role: "primary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+      - {name: "traps_lower", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # UPPER BACK — Additional missing patterns
+  # ============================================================
+  - keywords: ["dead hang"]
+    muscle: upper_back
+    heads:
+      - {name: "lats", role: "primary", activation: "moderate"}
+      - {name: "forearms", role: "primary", activation: "high"}
+      - {name: "traps_lower", role: "secondary", activation: "low"}
+
+  - keywords: ["rack pull"]
+    muscle: upper_back
+    heads:
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "traps_mid", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+      - {name: "glute_max", role: "tertiary", activation: "low"}
+      - {name: "hamstrings", role: "tertiary", activation: "low"}
+
+  # ============================================================
+  # LOWER BACK
+  # ============================================================
+  - keywords: ["superman"]
+    muscle: lower_back
+    heads:
+      - {name: "erector_spinae", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+      - {name: "traps_lower", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # CALVES — Additional
+  # ============================================================
+  - keywords: ["calf extension"]
+    muscle: calves
+    heads:
+      - {name: "gastrocnemius_medial", role: "primary", activation: "high"}
+      - {name: "gastrocnemius_lateral", role: "primary", activation: "high"}
+      - {name: "soleus", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # NECK
+  # ============================================================
+  - keywords: ["neck extension"]
+    muscle: neck
+    heads:
+      - {name: "neck_extensors", role: "primary", activation: "very_high"}
+
+  - keywords: ["neck curl"]
+    muscle: neck
+    heads:
+      - {name: "neck_flexors", role: "primary", activation: "very_high"}
+
+  # ============================================================
+  # FULL BODY / COMPOUND LIFTS — Olympic lifts & complexes
+  # ============================================================
+  - keywords: ["clean and jerk", "clean & jerk"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+
+  - keywords: ["clean and press", "clean & press"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["clean", "power clean", "hang clean"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+
+  - keywords: ["snatch", "power snatch", "hang snatch"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "traps_upper", role: "primary", activation: "very_high"}
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+
+  - keywords: ["clean pull", "snatch pull", "clean high pull"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "hamstrings", role: "primary", activation: "high"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "erector_spinae", role: "secondary", activation: "high"}
+
+  - keywords: ["split jerk", "jerk"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "primary", activation: "very_high"}
+      - {name: "triceps", role: "primary", activation: "high"}
+
+  - keywords: ["press under"]
+    muscle: full_body
+    heads:
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "triceps", role: "primary", activation: "high"}
+      - {name: "quadriceps", role: "secondary", activation: "low"}
+
+  - keywords: ["thruster"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "high"}
+
+  - keywords: ["kettlebell swing"]
+    muscle: full_body
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "primary", activation: "very_high"}
+      - {name: "erector_spinae", role: "secondary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "high"}
+      - {name: "forearms", role: "secondary", activation: "moderate"}
+
+  - keywords: ["kettlebell clean"]
+    muscle: full_body
+    heads:
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "hamstrings", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "primary", activation: "moderate"}
+      - {name: "traps_upper", role: "secondary", activation: "moderate"}
+      - {name: "forearms", role: "secondary", activation: "high"}
+
+  - keywords: ["kettlebell high pull"]
+    muscle: full_body
+    heads:
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "hamstrings", role: "primary", activation: "high"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "posterior_delt", role: "primary", activation: "high"}
+      - {name: "upper_back", role: "secondary", activation: "high"}
+
+  - keywords: ["kettlebell snatch"]
+    muscle: full_body
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "primary", activation: "very_high"}
+      - {name: "shoulders", role: "primary", activation: "very_high"}
+      - {name: "traps_upper", role: "secondary", activation: "high"}
+      - {name: "forearms", role: "secondary", activation: "high"}
+
+  - keywords: ["kettlebell turkish get up"]
+    muscle: full_body
+    heads:
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "core", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "quadriceps", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["sled push"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "calves", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "high"}
+      - {name: "shoulders", role: "tertiary", activation: "low"}
+
+  - keywords: ["sled pull"]
+    muscle: full_body
+    heads:
+      - {name: "hamstrings", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "upper_back", role: "secondary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "high"}
+      - {name: "forearms", role: "secondary", activation: "high"}
+      - {name: "core", role: "secondary", activation: "high"}
+
+  - keywords: ["farmers walk"]
+    muscle: full_body
+    heads:
+      - {name: "forearms", role: "primary", activation: "very_high"}
+      - {name: "traps_upper", role: "primary", activation: "high"}
+      - {name: "core", role: "primary", activation: "high"}
+      - {name: "quadriceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["wall ball"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "high"}
+      - {name: "glute_max", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+
+  - keywords: ["burpee"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "moderate"}
+      - {name: "chest", role: "secondary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "moderate"}
+
+  - keywords: ["mountain climber"]
+    muscle: full_body
+    heads:
+      - {name: "hip_flexors", role: "primary", activation: "high"}
+      - {name: "core", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+
+  - keywords: ["muscle up"]
+    muscle: full_body
+    heads:
+      - {name: "lats", role: "primary", activation: "very_high"}
+      - {name: "biceps", role: "primary", activation: "high"}
+      - {name: "triceps", role: "primary", activation: "high"}
+      - {name: "chest", role: "secondary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+
+  - keywords: ["dumbbell snatch"]
+    muscle: full_body
+    heads:
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "primary", activation: "very_high"}
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "traps_upper", role: "secondary", activation: "moderate"}
+
+  - keywords: ["ball slams"]
+    muscle: full_body
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "moderate"}
+      - {name: "glute_max", role: "primary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "moderate"}
+      - {name: "lats", role: "secondary", activation: "moderate"}
+
+  - keywords: ["front lever"]
+    muscle: full_body
+    heads:
+      - {name: "lats", role: "primary", activation: "very_high"}
+      - {name: "core", role: "primary", activation: "very_high"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "forearms", role: "secondary", activation: "high"}
+
+  - keywords: ["handstand hold"]
+    muscle: full_body
+    heads:
+      - {name: "shoulders", role: "primary", activation: "very_high"}
+      - {name: "triceps", role: "primary", activation: "high"}
+      - {name: "core", role: "primary", activation: "high"}
+      - {name: "forearms", role: "secondary", activation: "moderate"}
+
+  - keywords: ["high knees", "high knee skips"]
+    muscle: full_body
+    heads:
+      - {name: "hip_flexors", role: "primary", activation: "very_high"}
+      - {name: "quadriceps", role: "primary", activation: "moderate"}
+      - {name: "calves", role: "secondary", activation: "moderate"}
+
+  - keywords: ["jumping jack"]
+    muscle: full_body
+    heads:
+      - {name: "calves", role: "primary", activation: "moderate"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "abductors", role: "secondary", activation: "moderate"}
+
+  - keywords: ["downward dog"]
+    muscle: full_body
+    heads:
+      - {name: "shoulders", role: "primary", activation: "moderate"}
+      - {name: "hamstrings", role: "primary", activation: "moderate"}
+      - {name: "calves", role: "secondary", activation: "moderate"}
+      - {name: "triceps", role: "secondary", activation: "moderate"}
+
+  # ============================================================
+  # CARDIO — Key exercises with notable muscle engagement
+  # ============================================================
+  - keywords: ["battle ropes"]
+    muscle: cardio
+    heads:
+      - {name: "shoulders", role: "primary", activation: "high"}
+      - {name: "core", role: "primary", activation: "high"}
+      - {name: "forearms", role: "primary", activation: "high"}
+      - {name: "lats", role: "secondary", activation: "moderate"}
+
+  - keywords: ["ski erg"]
+    muscle: cardio
+    heads:
+      - {name: "lats", role: "primary", activation: "high"}
+      - {name: "triceps", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "moderate"}
+
+  - keywords: ["stair machine"]
+    muscle: cardio
+    heads:
+      - {name: "glute_max", role: "primary", activation: "moderate"}
+      - {name: "quadriceps", role: "primary", activation: "moderate"}
+      - {name: "calves", role: "secondary", activation: "moderate"}
+
+  - keywords: ["jump rope"]
+    muscle: cardio
+    heads:
+      - {name: "calves", role: "primary", activation: "high"}
+      - {name: "shoulders", role: "secondary", activation: "moderate"}
+      - {name: "forearms", role: "secondary", activation: "moderate"}
+
+  - keywords: ["sprints"]
+    muscle: cardio
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "primary", activation: "very_high"}
+      - {name: "glute_max", role: "primary", activation: "very_high"}
+      - {name: "calves", role: "primary", activation: "very_high"}
+
+  - keywords: ["cycling", "spinning"]
+    muscle: cardio
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "very_high"}
+      - {name: "hamstrings", role: "secondary", activation: "moderate"}
+      - {name: "calves", role: "secondary", activation: "moderate"}
+
+  - keywords: ["treadmill", "running"]
+    muscle: cardio
+    heads:
+      - {name: "quadriceps", role: "primary", activation: "moderate"}
+      - {name: "hamstrings", role: "primary", activation: "moderate"}
+      - {name: "calves", role: "primary", activation: "moderate"}
+      - {name: "glute_max", role: "secondary", activation: "moderate"}
+
+  - keywords: ["climbing"]
+    muscle: cardio
+    heads:
+      - {name: "forearms", role: "primary", activation: "very_high"}
+      - {name: "lats", role: "primary", activation: "high"}
+      - {name: "biceps", role: "secondary", activation: "moderate"}
+      - {name: "core", role: "secondary", activation: "high"}
+      - {name: "quadriceps", role: "tertiary", activation: "low"}

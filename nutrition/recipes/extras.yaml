@@ -1,0 +1,222 @@
+# Extra recipes — brunch and additional lunch/dinner options
+---
+- name: "Volkoren Wrap met Kip en Groente"
+  meal_type: lunch
+  prep_time_minutes: 10
+  servings: 1
+  ingredients:
+    - name: "Volkoren wrap"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 300, protein: 9.0, carbs: 52.0, fat: 6.0}
+    - name: "Kipfilet (gegrild)"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 165, protein: 31.0, carbs: 0.0, fat: 3.6}
+    - name: "IJsbergsla"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 14, protein: 0.9, carbs: 3.0, fat: 0.1}
+    - name: "Komkommer"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 15, protein: 0.7, carbs: 3.6, fat: 0.1}
+    - name: "Yoghurt dressing (0% vet)"
+      amount: 30
+      unit: g
+      macros_per_100g: {calories: 59, protein: 10.3, carbs: 3.6, fat: 0.2}
+  totals:
+    calories: 309
+    protein: 41.9
+    carbs: 35.3
+    fat: 4.4
+  instructions: "Warm wrap kort op. Beleg met sla, komkommer, kip. Druppel dressing erover. Rol op."
+  tags: [high-protein, lunch, quick, wrap]
+
+- name: "Runderstoof met Aardappelpuree"
+  meal_type: dinner
+  prep_time_minutes: 45
+  servings: 1
+  ingredients:
+    - name: "Runderlappen (voor stoof)"
+      amount: 175
+      unit: g
+      macros_per_100g: {calories: 180, protein: 26.0, carbs: 0.0, fat: 8.0}
+    - name: "Aardappels"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 77, protein: 2.0, carbs: 17.5, fat: 0.1}
+    - name: "Wortel"
+      amount: 80
+      unit: g
+      macros_per_100g: {calories: 41, protein: 0.9, carbs: 10.0, fat: 0.2}
+    - name: "Ui"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 40, protein: 1.1, carbs: 9.0, fat: 0.1}
+    - name: "Runderbouillon"
+      amount: 100
+      unit: ml
+      macros_per_100g: {calories: 5, protein: 0.5, carbs: 0.5, fat: 0.1}
+    - name: "Halfvolle melk"
+      amount: 30
+      unit: ml
+      macros_per_100g: {calories: 50, protein: 3.4, carbs: 4.8, fat: 1.5}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 567
+    protein: 49.0
+    carbs: 49.5
+    fat: 19.5
+  instructions: "Snij rund in blokjes. Bak bruin in olie. Voeg ui, wortel, bouillon toe. Laat 40 min sudderen. Kook aardappels, stamp met melk tot puree. Serveer stoof op puree."
+  tags: [high-protein, dinner, comfort, dutch]
+
+- name: "Tilapia met Couscous en Courgette"
+  meal_type: dinner
+  prep_time_minutes: 20
+  servings: 1
+  ingredients:
+    - name: "Tilapiafilet (rauw)"
+      amount: 175
+      unit: g
+      macros_per_100g: {calories: 96, protein: 20.0, carbs: 0.0, fat: 1.7}
+    - name: "Couscous (droog)"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 376, protein: 13.0, carbs: 77.0, fat: 0.6}
+    - name: "Courgette"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 17, protein: 1.2, carbs: 3.1, fat: 0.3}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 468
+    protein: 40.3
+    carbs: 48.5
+    fat: 13.1
+  instructions: "Kook couscous met kokend water. Grill tilapia 3 min per kant. Bak courgette in olie. Serveer alles samen."
+  tags: [high-protein, dinner, fish, quick]
+
+- name: "Eiersalade (zonder mayo) op Volkorenbrood"
+  meal_type: lunch
+  prep_time_minutes: 10
+  servings: 1
+  ingredients:
+    - name: "Eieren"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 143, protein: 12.4, carbs: 0.7, fat: 10.0}
+    - name: "Griekse yoghurt (0% vet)"
+      amount: 30
+      unit: g
+      macros_per_100g: {calories: 59, protein: 10.3, carbs: 3.6, fat: 0.2}
+    - name: "Volkorenbrood"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 247, protein: 13.0, carbs: 44.0, fat: 3.6}
+  totals:
+    calories: 388
+    protein: 28.9
+    carbs: 28.1
+    fat: 17.0
+  instructions: "Kook eieren 8 min. Prak met yoghurt, peper en zout. Serveer op brood."
+  tags: [high-protein, lunch, quick, meal-prep]
+
+# ── Higher-calorie options for meeting 2200 kcal target ─────────────────
+
+- name: "Kip Pasta met Pesto"
+  meal_type: dinner
+  prep_time_minutes: 20
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Volkoren pasta (droog)"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 350, protein: 13.0, carbs: 71.0, fat: 1.7}
+    - name: "Groene pesto"
+      amount: 20
+      unit: g
+      macros_per_100g: {calories: 490, protein: 5.0, carbs: 8.0, fat: 49.0}
+    - name: "Olijfolie"
+      amount: 5
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 688
+    protein: 60.1
+    carbs: 74.0
+    fat: 22.7
+  instructions: "Kook pasta. Bak kip in blokjes in olie. Meng met pasta en pesto."
+  tags: [high-protein, dinner, italian, meal-prep]
+
+- name: "Rundvlees Burrito Bowl"
+  meal_type: dinner
+  prep_time_minutes: 20
+  servings: 1
+  ingredients:
+    - name: "Rundergehakt (mager)"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 160, protein: 21.0, carbs: 0.0, fat: 8.0}
+    - name: "Basmatirijst (droog)"
+      amount: 90
+      unit: g
+      macros_per_100g: {calories: 350, protein: 7.0, carbs: 78.0, fat: 0.5}
+    - name: "Zwarte bonen (blik)"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 132, protein: 8.9, carbs: 24.0, fat: 0.5}
+    - name: "Avocado"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 160, protein: 2.0, carbs: 9.0, fat: 15.0}
+    - name: "Paprika"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 31, protein: 1.0, carbs: 6.0, fat: 0.3}
+  totals:
+    calories: 762
+    protein: 59.9
+    carbs: 93.0
+    fat: 19.4
+  instructions: "Kook rijst. Bak gehakt rul. Verwarm bonen. Snij avocado en paprika. Doe alles in bowl."
+  tags: [high-protein, dinner, mexican, meal-prep]
+
+- name: "Post-Workout Shake (volle portie)"
+  meal_type: snack
+  prep_time_minutes: 2
+  servings: 1
+  ingredients:
+    - name: "Whey protein (vanille)"
+      amount: 40
+      unit: g
+      macros_per_100g: {calories: 395, protein: 90.0, carbs: 4.0, fat: 3.0}
+    - name: "Havermout"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 379, protein: 13.0, carbs: 68.0, fat: 7.0}
+    - name: "Banaan"
+      amount: 120
+      unit: g
+      macros_per_100g: {calories: 89, protein: 1.1, carbs: 23.0, fat: 0.3}
+    - name: "Halfvolle melk"
+      amount: 300
+      unit: ml
+      macros_per_100g: {calories: 50, protein: 3.4, carbs: 4.8, fat: 1.5}
+  totals:
+    calories: 601
+    protein: 53.7
+    carbs: 75.2
+    fat: 11.2
+  instructions: "Doe alles in blender. Blend 30 sec."
+  tags: [high-protein, snack, post-workout, shake]

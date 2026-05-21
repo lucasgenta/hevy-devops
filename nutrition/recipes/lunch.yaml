@@ -1,0 +1,155 @@
+# Lunch recipes — cut-friendly, Dutch supermarkets
+# All macros sourced from USDA SR Legacy / Open Food Facts NL
+---
+- name: "Kipfilet met Broccoli en Rijst"
+  meal_type: lunch
+  prep_time_minutes: 20
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Basmatirijst (droog)"
+      amount: 80
+      unit: g
+      macros_per_100g: {calories: 350, protein: 7.0, carbs: 78.0, fat: 0.5}
+    - name: "Broccoli"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 34, protein: 2.8, carbs: 7.0, fat: 0.4}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 613
+    protein: 54.4
+    carbs: 66.0
+    fat: 20.5
+  instructions: "Kook rijst volgens pakje. Grill kipfilet in grillpan 5 min per kant. Stoom broccoli 4 min. Snij kip in plakjes. Serveer met alles."
+  tags: [high-protein, cut-friendly, lunch, meal-prep]
+
+- name: "Tonijn Salade met Volkoren Pasta"
+  meal_type: lunch
+  prep_time_minutes: 15
+  servings: 1
+  ingredients:
+    - name: "Volkoren pasta (droog)"
+      amount: 80
+      unit: g
+      macros_per_100g: {calories: 350, protein: 13.0, carbs: 71.0, fat: 1.7}
+    - name: "Tonijn (blik in water)"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 116, protein: 26.0, carbs: 0.0, fat: 0.8}
+    - name: "Cherry tomaten"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 18, protein: 0.9, carbs: 3.9, fat: 0.2}
+    - name: "Komkommer"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 15, protein: 0.7, carbs: 3.6, fat: 0.1}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 486
+    protein: 40.3
+    carbs: 64.2
+    fat: 13.0
+  instructions: "Kook pasta. Laat afkoelen. Meng met uitgelekte tonijn, gesneden tomaten en komkommer. Besprenkel met olie."
+  tags: [high-protein, meal-prep, lunch, fish]
+
+- name: "Kip Caesar Salade (zonder croutons)"
+  meal_type: lunch
+  prep_time_minutes: 15
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 175
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Romeinse sla"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 17, protein: 1.2, carbs: 3.3, fat: 0.3}
+    - name: "Parmezaanse kaas"
+      amount: 15
+      unit: g
+      macros_per_100g: {calories: 431, protein: 38.0, carbs: 4.1, fat: 29.0}
+    - name: "Griekse yoghurt (0% vet)"
+      amount: 40
+      unit: g
+      macros_per_100g: {calories: 59, protein: 10.3, carbs: 3.6, fat: 0.2}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 373
+    protein: 53.1
+    carbs: 6.7
+    fat: 16.4
+  instructions: "Grill kipfilet, laat rusten, snij in plakken. Maak dressing van yoghurt, olie, parmezaan. Meng sla met dressing. Leg kip erop."
+  tags: [high-protein, low-carb, lunch, salad]
+
+- name: "Rundergehakt met Zoete Aardappel en Groene Bonen"
+  meal_type: lunch
+  prep_time_minutes: 25
+  servings: 1
+  ingredients:
+    - name: "Rundergehakt (mager 93/7)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 160, protein: 21.0, carbs: 0.0, fat: 8.0}
+    - name: "Zoete aardappel"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 86, protein: 1.6, carbs: 20.0, fat: 0.1}
+    - name: "Sperziebonen"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 31, protein: 1.8, carbs: 7.0, fat: 0.2}
+    - name: "Olijfolie"
+      amount: 5
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 518
+    protein: 36.2
+    carbs: 42.4
+    fat: 16.2
+  instructions: "Snij zoete aardappel in blokjes, kook 15 min of bak in oven. Bak gehakt rul in olie. Kook sperziebonen 6 min. Meng alles."
+  tags: [high-protein, lunch, meal-prep, beef]
+
+- name: "Gegrilde Zalm met Quinoa en Avocado"
+  meal_type: lunch
+  prep_time_minutes: 20
+  servings: 1
+  ingredients:
+    - name: "Zalmfilet (rauw)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 188, protein: 20.4, carbs: 0.0, fat: 11.0}
+    - name: "Quinoa (droog)"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 368, protein: 14.0, carbs: 64.0, fat: 6.0}
+    - name: "Avocado"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 160, protein: 2.0, carbs: 9.0, fat: 15.0}
+    - name: "Citroensap"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 22, protein: 0.4, carbs: 7.0, fat: 0.0}
+  totals:
+    calories: 619
+    protein: 42.8
+    carbs: 44.8
+    fat: 27.8
+  instructions: "Kook quinoa 15 min. Grill zalm 4 min per kant. Snij avocado in plakjes. Serveer zalm op quinoa met avocado en citroen."
+  tags: [high-protein, omega-3, lunch, fish]

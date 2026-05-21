@@ -1,0 +1,108 @@
+# =============================================================================
+# Hevy DevOps — Docker Compose Stack
+# =============================================================================
+# Single-command deployment for the full Hevy platform.
+#
+# Services:
+#   gateway   — Nginx reverse proxy (single entry point, port 80)
+#   dashboard — Streamlit training analytics dashboard
+#   scraper   — Periodic scraper that syncs Hevy API data
+#
+# Quick start:
+#   1. cp .env.example .env        # configure API keys
+#   2. docker compose up -d        # start everything
+#   3. open http://localhost        # use the dashboard
+# =============================================================================
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # Gateway — Nginx reverse proxy + load balancer
+  # ---------------------------------------------------------------------------
+  gateway:
+    build:
+      context: .
+      dockerfile: services/gateway/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      dashboard:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/healthz"]
+      interval: 15s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+    networks:
+      - hevy-net
+
+  # ---------------------------------------------------------------------------
+  # Dashboard — Streamlit training analytics
+  # ---------------------------------------------------------------------------
+  dashboard:
+    build:
+      context: .
+      dockerfile: services/dashboard/Dockerfile
+    expose:
+      - "8501"
+    volumes:
+      - hevy_data:/app/data
+    env_file:
+      - .env
+    environment:
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "scripts/healthcheck.py", "--service", "dashboard"]
+      interval: 30s
+      timeout: 10s
+      start_period: 20s
+      retries: 3
+    networks:
+      - hevy-net
+
+  # ---------------------------------------------------------------------------
+  # Scraper — Periodic Hevy API data sync
+  # ---------------------------------------------------------------------------
+  scraper:
+    build:
+      context: .
+      dockerfile: services/scraper/Dockerfile
+    volumes:
+      - hevy_data:/app/data
+    env_file:
+      - .env
+    environment:
+      - SCRAPE_INTERVAL=${SCRAPE_INTERVAL:-21600}
+      - SCRAPE_ONCE=${SCRAPE_ONCE:-0}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "scripts/healthcheck.py", "--service", "scraper"]
+      interval: 30s
+      timeout: 10s
+      start_period: 10s
+      retries: 3
+    networks:
+      - hevy-net
+
+# ---------------------------------------------------------------------------
+# Persistent volumes
+# ---------------------------------------------------------------------------
+volumes:
+  hevy_data:
+    name: hevy_scraped_data
+    # Data persists across container restarts:
+    #   docker compose down -v   → deletes volume
+    #   docker compose down      → keeps volume
+
+# ---------------------------------------------------------------------------
+# Network
+# ---------------------------------------------------------------------------
+networks:
+  hevy-net:
+    name: hevy_network
+    driver: bridge

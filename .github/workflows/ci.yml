@@ -1,0 +1,150 @@
+# =============================================================================
+# Hevy DevOps — CI/CD Pipeline
+# =============================================================================
+# Runs on every push and pull request to the main branch.
+#
+# Stages:
+#   1. Lint     — Static analysis with ruff
+#   2. Build    — Verify all Docker images build successfully
+#   3. Smoke    — Start the stack and verify health endpoints
+#   4. Security — Scan images for vulnerabilities (Trivy)
+# =============================================================================
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+
+jobs:
+
+  # ---------------------------------------------------------------------------
+  # Job 1: Lint — static analysis
+  # ---------------------------------------------------------------------------
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ruff
+        run: pip install ruff
+
+      - name: Run ruff
+        run: ruff check hevy/ nutrition/ scripts/ services/ --output-format=github
+
+  # ---------------------------------------------------------------------------
+  # Job 2: Build — verify Docker images compile
+  # ---------------------------------------------------------------------------
+  build:
+    name: Build Images
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build all services
+        run: docker compose build --parallel
+
+      - name: List built images
+        run: docker images --filter "reference=hevy-*" --filter "reference=*hevy*"
+
+  # ---------------------------------------------------------------------------
+  # Job 3: Smoke Test — deploy and verify
+  # ---------------------------------------------------------------------------
+  smoke-test:
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create .env for testing
+        run: |
+          cat > .env << 'EOF'
+          HEVY_API_KEY=test-key-12345
+          DEEPSEEK_API_KEY=
+          ASANA_ACCESS_TOKEN=
+          ASANA_SHOPPING_PROJECT_GID=
+          TELEGRAM_BOT_TOKEN=
+          TELEGRAM_CHAT_ID=
+          EOF
+
+      - name: Start stack
+        run: docker compose up -d --wait
+
+      - name: Check gateway health
+        run: |
+          echo "Checking gateway..."
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost/healthz > /dev/null 2>&1; then
+              echo "✓ Gateway is healthy"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "✗ Gateway failed health check"
+          docker compose logs --tail=30 gateway dashboard
+          exit 1
+
+      - name: Show service status
+        run: docker compose ps
+
+      - name: Clean up
+        run: docker compose down -v
+
+  # ---------------------------------------------------------------------------
+  # Job 4: Security Scan (Trivy)
+  # ---------------------------------------------------------------------------
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build images for scanning
+        run: docker compose build
+
+      - name: Run Trivy on dashboard image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "hevy-devops-dashboard:latest"
+          format: "sarif"
+          output: "trivy-dashboard.sarif"
+          severity: "HIGH,CRITICAL"
+
+      - name: Run Trivy on scraper image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "hevy-devops-scraper:latest"
+          format: "sarif"
+          output: "trivy-scraper.sarif"
+          severity: "HIGH,CRITICAL"
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-dashboard.sarif
+          category: "dashboard"
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy-scraper.sarif
+          category: "scraper"

@@ -1,0 +1,135 @@
+# Breakfast recipes — cut-friendly, Dutch supermarket ingredients
+# All macros sourced from USDA SR Legacy / Open Food Facts NL
+---
+- name: "Havermout met Magere Kwark en Frambozen"
+  meal_type: breakfast
+  prep_time_minutes: 5
+  servings: 1
+  ingredients:
+    - name: "Havermout"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 379, protein: 13.0, carbs: 68.0, fat: 7.0}
+    - name: "Magere kwark"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 59, protein: 10.0, carbs: 3.6, fat: 0.2}
+    - name: "Frambozen (diepvries)"
+      amount: 75
+      unit: g
+      macros_per_100g: {calories: 52, protein: 1.2, carbs: 12.0, fat: 0.7}
+  totals:
+    calories: 349
+    protein: 28.7
+    carbs: 46.9
+    fat: 4.1
+  instructions: "Mix havermout met kwark. Voeg frambozen toe. Niet koken — koud eten."
+  tags: [high-protein, breakfast, quick, dutch]
+
+- name: "Omelet met Spinazie en Feta"
+  meal_type: breakfast
+  prep_time_minutes: 10
+  servings: 1
+  ingredients:
+    - name: "Eieren"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 143, protein: 12.4, carbs: 0.7, fat: 10.0}
+    - name: "Spinazie (vers)"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 23, protein: 2.9, carbs: 3.6, fat: 0.4}
+    - name: "Feta"
+      amount: 30
+      unit: g
+      macros_per_100g: {calories: 264, protein: 14.2, carbs: 4.0, fat: 21.0}
+    - name: "Olijfolie"
+      amount: 5
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 419
+    protein: 31.2
+    carbs: 5.6
+    fat: 31.0
+  instructions: "Klop eieren. Bak spinazie kort in olie. Giet ei erover. Verkruimel feta erover. Vouw en serveer."
+  tags: [high-protein, low-carb, breakfast, quick]
+
+- name: "Skyr met Granola en Blauwe Bessen"
+  meal_type: breakfast
+  prep_time_minutes: 3
+  servings: 1
+  ingredients:
+    - name: "Skyr (icelandic yogurt)"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 60, protein: 11.0, carbs: 3.7, fat: 0.2}
+    - name: "Granola (zonder suiker)"
+      amount: 30
+      unit: g
+      macros_per_100g: {calories: 450, protein: 10.0, carbs: 65.0, fat: 15.0}
+    - name: "Blauwe bessen"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 57, protein: 0.7, carbs: 14.5, fat: 0.3}
+  totals:
+    calories: 283
+    protein: 25.4
+    carbs: 30.6
+    fat: 5.4
+  instructions: "Doe skyr in kom. Strooi granola erover. Voeg blauwe bessen toe."
+  tags: [high-protein, breakfast, quick]
+
+- name: "Banaan Pannenkoeken (havermout-eiwit)"
+  meal_type: breakfast
+  prep_time_minutes: 15
+  servings: 1
+  ingredients:
+    - name: "Banaan"
+      amount: 120
+      unit: g
+      macros_per_100g: {calories: 89, protein: 1.1, carbs: 23.0, fat: 0.3}
+    - name: "Eieren"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 143, protein: 12.4, carbs: 0.7, fat: 10.0}
+    - name: "Havermout"
+      amount: 40
+      unit: g
+      macros_per_100g: {calories: 379, protein: 13.0, carbs: 68.0, fat: 7.0}
+    - name: "Whey protein (vanille)"
+      amount: 20
+      unit: g
+      macros_per_100g: {calories: 395, protein: 90.0, carbs: 4.0, fat: 3.0}
+  totals:
+    calories: 438
+    protein: 39.8
+    carbs: 58.3
+    fat: 14.3
+  instructions: "Prak banaan. Mix met eieren, havermout en whey. Bak in pan op middelhoog vuur. 4 kleine pannenkoeken."
+  tags: [high-protein, breakfast, pancakes, pre-workout]
+
+- name: "Volkoren Boterham met Pindakaas en Banaan"
+  meal_type: breakfast
+  prep_time_minutes: 3
+  servings: 1
+  ingredients:
+    - name: "Volkorenbrood"
+      amount: 90
+      unit: g
+      macros_per_100g: {calories: 247, protein: 13.0, carbs: 44.0, fat: 3.6}
+    - name: "Pindakaas (100% pinda)"
+      amount: 25
+      unit: g
+      macros_per_100g: {calories: 588, protein: 25.0, carbs: 20.0, fat: 50.0}
+    - name: "Banaan"
+      amount: 60
+      unit: g
+      macros_per_100g: {calories: 89, protein: 1.1, carbs: 23.0, fat: 0.3}
+  totals:
+    calories: 420
+    protein: 19.8
+    carbs: 63.9
+    fat: 15.9
+  instructions: "Besmeer brood met pindakaas. Snij banaan in plakjes erop."
+  tags: [vegetarian, quick, breakfast, pre-workout]

@@ -1,0 +1,43 @@
+# =============================================================================
+# Hevy DevOps — Local development overrides
+# =============================================================================
+# These settings apply on top of docker-compose.yml when no explicit config
+# file is specified (docker-compose loads override.yml automatically).
+#
+# For production/staging deployments, override via:
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# =============================================================================
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # Dashboard — dev mode with auto-reload
+  # ---------------------------------------------------------------------------
+  dashboard:
+    # Mount source code for live reload during development
+    volumes:
+      - ./hevy:/app/hevy
+      - ./nutrition:/app/nutrition
+      - ./pwa:/app/pwa
+      - ./scripts:/app/scripts
+      - hevy_data:/app/data
+    environment:
+      - STREAMLIT_RUN_ON_SAVE=true      # auto-reload on file changes
+      - HEVY_DEV_MODE=true               # enable dev-only features
+    command:
+      - "streamlit"
+      - "run"
+      - "hevy/dashboard/app.py"
+      - "--server.port=8501"
+      - "--server.headless=true"
+      - "--server.address=0.0.0.0"
+      - "--server.runOnSave=true"
+      - "--logger.level=debug"
+
+  # ---------------------------------------------------------------------------
+  # Scraper — run once in dev mode
+  # ---------------------------------------------------------------------------
+  scraper:
+    environment:
+      - SCRAPE_ONCE=1          # run once, don't loop
+      - SCRAPE_INTERVAL=60     # short interval for testing

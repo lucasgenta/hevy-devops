@@ -1,0 +1,163 @@
+# Dinner recipes — cut-friendly, Dutch supermarkets
+# All macros sourced from USDA SR Legacy / Open Food Facts NL
+---
+- name: "Kipfilet met Zoete Aardappel en Spinazie"
+  meal_type: dinner
+  prep_time_minutes: 25
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Zoete aardappel"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 86, protein: 1.6, carbs: 20.0, fat: 0.1}
+    - name: "Spinazie (vers)"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 23, protein: 2.9, carbs: 3.6, fat: 0.4}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 539
+    protein: 51.3
+    carbs: 43.6
+    fat: 22.1
+  instructions: "Snij zoete aardappel in blokjes, bak in helft olie 15 min op 200C. Grill kipfilet in rest olie. Fruit spinazie kort mee. Serveer."
+  tags: [high-protein, dinner, meal-prep]
+
+- name: "Spaghetti Bolognese (volkoren)"
+  meal_type: dinner
+  prep_time_minutes: 30
+  servings: 1
+  ingredients:
+    - name: "Volkoren spaghetti (droog)"
+      amount: 80
+      unit: g
+      macros_per_100g: {calories: 350, protein: 13.0, carbs: 71.0, fat: 1.7}
+    - name: "Rundergehakt (mager)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 160, protein: 21.0, carbs: 0.0, fat: 8.0}
+    - name: "Passata (gezeefde tomaten)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 32, protein: 1.5, carbs: 7.0, fat: 0.3}
+    - name: "Ui"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 40, protein: 1.1, carbs: 9.0, fat: 0.1}
+    - name: "Olijfolie"
+      amount: 5
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 547
+    protein: 40.7
+    carbs: 67.0
+    fat: 14.9
+  instructions: "Kook pasta. Fruit ui in olie. Bak gehakt rul. Voeg passata toe, laat 10 min pruttelen. Meng met pasta."
+  tags: [high-protein, dinner, italian, meal-prep]
+
+- name: "Gegrilde Zalm met Groenten en Aardappel"
+  meal_type: dinner
+  prep_time_minutes: 25
+  servings: 1
+  ingredients:
+    - name: "Zalmfilet (rauw)"
+      amount: 180
+      unit: g
+      macros_per_100g: {calories: 188, protein: 20.4, carbs: 0.0, fat: 11.0}
+    - name: "Krielaardappeltjes"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 77, protein: 2.0, carbs: 17.5, fat: 0.1}
+    - name: "Groene asperges"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 20, protein: 2.2, carbs: 4.0, fat: 0.1}
+    - name: "Olijfolie"
+      amount: 10
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 588
+    protein: 42.4
+    carbs: 39.0
+    fat: 24.1
+  instructions: "Kook aardappels 15 min. Grill zalm 4 min per kant. Grill asperges 3 min. Besprenkel met olie."
+  tags: [high-protein, omega-3, dinner, fish]
+
+- name: "Kip Curry met Rijst"
+  meal_type: dinner
+  prep_time_minutes: 25
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 175
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Basmatirijst (droog)"
+      amount: 70
+      unit: g
+      macros_per_100g: {calories: 350, protein: 7.0, carbs: 78.0, fat: 0.5}
+    - name: "Kokosmelk (light)"
+      amount: 100
+      unit: ml
+      macros_per_100g: {calories: 66, protein: 0.7, carbs: 2.8, fat: 6.0}
+    - name: "Paprika"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 31, protein: 1.0, carbs: 6.0, fat: 0.3}
+    - name: "Uien"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 40, protein: 1.1, carbs: 9.0, fat: 0.1}
+    - name: "Currypasta (rode)"
+      amount: 15
+      unit: g
+      macros_per_100g: {calories: 100, protein: 2.0, carbs: 10.0, fat: 6.0}
+  totals:
+    calories: 517
+    protein: 44.3
+    carbs: 68.5
+    fat: 12.4
+  instructions: "Kook rijst. Bak ui en paprika. Voeg currypasta toe, bak 1 min. Voeg kipblokjes en kokosmelk toe. Laat 12 min sudderen. Serveer met rijst."
+  tags: [high-protein, dinner, asian, spicy]
+
+- name: "Ovenschotel Kip-Avocado"
+  meal_type: dinner
+  prep_time_minutes: 30
+  servings: 1
+  ingredients:
+    - name: "Kipfilet (rauw)"
+      amount: 175
+      unit: g
+      macros_per_100g: {calories: 110, protein: 23.0, carbs: 0.0, fat: 1.5}
+    - name: "Avocado"
+      amount: 80
+      unit: g
+      macros_per_100g: {calories: 160, protein: 2.0, carbs: 9.0, fat: 15.0}
+    - name: "Cherry tomaten"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 18, protein: 0.9, carbs: 3.9, fat: 0.2}
+    - name: "Mozzarella (part skim)"
+      amount: 50
+      unit: g
+      macros_per_100g: {calories: 280, protein: 28.0, carbs: 3.0, fat: 17.0}
+    - name: "Olijfolie"
+      amount: 5
+      unit: ml
+      macros_per_100g: {calories: 884, protein: 0.0, carbs: 0.0, fat: 100.0}
+  totals:
+    calories: 522
+    protein: 53.7
+    carbs: 10.6
+    fat: 31.3
+  instructions: "Snij kip in blokjes. Meng met olie, tomaat en avocado in ovenschaal. Leg mozzarella erover. Bak 20 min op 200C."
+  tags: [high-protein, low-carb, dinner, oven]

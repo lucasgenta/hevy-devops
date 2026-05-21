@@ -1,0 +1,128 @@
+# Snack recipes — cut-friendly, Dutch supermarkets
+# All macros sourced from USDA SR Legacy / Open Food Facts NL
+---
+- name: "Magere Kwark met Amandelen"
+  meal_type: snack
+  prep_time_minutes: 2
+  servings: 1
+  ingredients:
+    - name: "Magere kwark"
+      amount: 200
+      unit: g
+      macros_per_100g: {calories: 59, protein: 10.0, carbs: 3.6, fat: 0.2}
+    - name: "Amandelen (ongezouten)"
+      amount: 20
+      unit: g
+      macros_per_100g: {calories: 579, protein: 21.0, carbs: 22.0, fat: 50.0}
+  totals:
+    calories: 235
+    protein: 24.2
+    carbs: 12.4
+    fat: 10.4
+  instructions: "Doe kwark in kom. Hak amandelen grof. Strooi erover."
+  tags: [high-protein, snack, quick, nuts]
+
+- name: "Appel met Pindakaas"
+  meal_type: snack
+  prep_time_minutes: 2
+  servings: 1
+  ingredients:
+    - name: "Appel (goudreinette)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 52, protein: 0.3, carbs: 14.0, fat: 0.2}
+    - name: "Pindakaas (100% pinda)"
+      amount: 20
+      unit: g
+      macros_per_100g: {calories: 588, protein: 25.0, carbs: 20.0, fat: 50.0}
+  totals:
+    calories: 196
+    protein: 5.1
+    carbs: 25.0
+    fat: 10.2
+  instructions: "Snij appel in parten. Dip in pindakaas."
+  tags: [snack, quick, sweet, vegetarian]
+
+- name: "Eiwitshake (whey + melk)"
+  meal_type: snack
+  prep_time_minutes: 2
+  servings: 1
+  ingredients:
+    - name: "Whey protein (vanille)"
+      amount: 30
+      unit: g
+      macros_per_100g: {calories: 395, protein: 90.0, carbs: 4.0, fat: 3.0}
+    - name: "Halfvolle melk"
+      amount: 250
+      unit: ml
+      macros_per_100g: {calories: 50, protein: 3.4, carbs: 4.8, fat: 1.5}
+  totals:
+    calories: 238
+    protein: 35.6
+    carbs: 13.2
+    fat: 4.8
+  instructions: "Doe whey en melk in shaker. Schud 20 sec."
+  tags: [high-protein, snack, quick, post-workout]
+
+- name: "Hüttenkäse met Volkoren Crackers"
+  meal_type: snack
+  prep_time_minutes: 2
+  servings: 1
+  ingredients:
+    - name: "Hüttenkäse (cottage cheese)"
+      amount: 150
+      unit: g
+      macros_per_100g: {calories: 72, protein: 10.0, carbs: 3.0, fat: 1.0}
+    - name: "Volkoren crackers"
+      amount: 25
+      unit: g
+      macros_per_100g: {calories: 380, protein: 10.0, carbs: 68.0, fat: 6.0}
+  totals:
+    calories: 202
+    protein: 17.5
+    carbs: 21.5
+    fat: 3.0
+  instructions: "Schep hüttenkäse op crackers. Bestrooi met peper."
+  tags: [high-protein, snack, quick, low-fat]
+
+- name: "Gekookte Eieren (2 stuks)"
+  meal_type: snack
+  prep_time_minutes: 10
+  servings: 1
+  ingredients:
+    - name: "Eieren"
+      amount: 100
+      unit: g
+      macros_per_100g: {calories: 143, protein: 12.4, carbs: 0.7, fat: 10.0}
+  totals:
+    calories: 143
+    protein: 12.4
+    carbs: 0.7
+    fat: 10.0
+  instructions: "Kook eieren 7 min. Laat schrikken. Pel en eet met zout."
+  tags: [high-protein, snack, quick, low-carb]
+
+- name: "Rijstwafel met Avocado en Zalm"
+  meal_type: snack
+  prep_time_minutes: 5
+  servings: 1
+  ingredients:
+    - name: "Rijstwafels (naturel)"
+      amount: 20
+      unit: g
+      macros_per_100g: {calories: 380, protein: 8.0, carbs: 80.0, fat: 3.0}
+    - name: "Avocado"
+      amount: 40
+      unit: g
+      macros_per_100g: {calories: 160, protein: 2.0, carbs: 9.0, fat: 15.0}
+    - name: "Gerookte zalm"
+      amount: 40
+      unit: g
+      macros_per_100g: {calories: 117, protein: 18.0, carbs: 0.0, fat: 4.5}
+  totals:
+    calories: 161
+    protein: 8.9
+    carbs: 17.2
+    fat: 8.4
+  instructions: "Prak avocado op rijstwafel. Leg zalm erop. Peper en citroen."
+  tags: [snack, fish, omega-3, quick]
