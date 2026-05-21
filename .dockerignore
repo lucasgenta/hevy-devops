@@ -1,0 +1,51 @@
+# =============================================================================
+# Docker ignore — Exclude files from Docker build context
+# =============================================================================
+# Speeds up builds by not sending unnecessary files to the Docker daemon.
+# Also prevents accidentally including secrets or local artifacts.
+# =============================================================================
+
+# --- Environment ---
+.env
+.env.local
+*.env
+
+# --- Version control ---
+.git
+.gitignore
+.gitattributes
+.github/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+*.egg
+dist/
+build/
+.pytest_cache/
+.ruff_cache/
+
+# --- Pre-commit ---
+.pre-commit-config.yaml
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Project-specific ---
+data/
+reports/
+goals.json
+pyproject.toml
+Makefile
+README.md
+docker-compose*.yml

@@ -1,0 +1,84 @@
+# =============================================================================
+# Dependabot — Automated dependency updates
+# =============================================================================
+# Keeps Python and Docker dependencies up-to-date with auto-generated PRs.
+#
+# Schedule: daily checks. PRs are created when new versions are available.
+# Grouping: minor/patch bumps are batched into a single PR to reduce noise.
+# =============================================================================
+
+version: 2
+updates:
+
+  # --- Python (Dashboard) ---
+  - package-ecosystem: "pip"
+    directory: "/services/dashboard"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 5
+    groups:
+      dashboard-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- Python (Scraper) ---
+  - package-ecosystem: "pip"
+    directory: "/services/scraper"
+    schedule:
+      interval: "daily"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 3
+    groups:
+      scraper-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- Docker ---
+  - package-ecosystem: "docker"
+    directory: "/services/dashboard"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "docker"
+    directory: "/services/gateway"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 3
+
+  - package-ecosystem: "docker"
+    directory: "/services/scraper"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    open-pull-requests-limit: 3
+
+  # --- GitHub Actions ---
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+      timezone: "Europe/Amsterdam"
+    groups:
+      actions:
+        patterns:
+          - "*"

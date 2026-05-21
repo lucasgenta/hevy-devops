@@ -1,0 +1,43 @@
+# =============================================================================
+# Pre-commit hooks — Automated code quality checks
+# =============================================================================
+# Install with:  pre-commit install
+# Run manually:  pre-commit run --all-files
+#
+# Hooks run automatically on every `git commit` and catch issues early.
+# =============================================================================
+
+repos:
+  # --- Ruff: Python linting + auto-formatting ---
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.9.0
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
+  # --- Basic file hygiene ---
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+        args: [--fix=lf]
+
+  # --- Dockerfile lint ---
+  - repo: https://github.com/hadolint/hadolint
+    rev: v2.12.0
+    hooks:
+      - id: hadolint-docker
+        args:
+          - --failure-threshold=warning
+          - --ignore=DL3008
+          - --ignore=DL3013
