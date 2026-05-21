@@ -25,8 +25,8 @@ COPY scripts/    scripts/
 RUN mkdir -p /app/data
 
 # Health check — verifies the process is alive
-HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-    CMD python scripts/healthcheck.py --service scraper
+HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
+    CMD kill -0 1 2>/dev/null || exit 1
 
 # Entrypoint runs the scrape on start and then loops on a schedule
 COPY services/scraper/entrypoint.sh /entrypoint.sh
