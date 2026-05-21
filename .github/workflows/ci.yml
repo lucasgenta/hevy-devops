@@ -85,13 +85,13 @@ jobs:
           TELEGRAM_CHAT_ID=
           EOF
 
-      - name: Start stack
-        run: docker compose up -d --wait
+      - name: Start stack (detached)
+        run: docker compose up -d
 
-      - name: Check gateway health
+      - name: Wait for gateway to be healthy
         run: |
-          echo "Checking gateway..."
-          for i in $(seq 1 30); do
+          echo "Waiting for gateway..."
+          for i in $(seq 1 45); do
             if curl -sf http://localhost/healthz > /dev/null 2>&1; then
               echo "✓ Gateway is healthy"
               exit 0
@@ -100,6 +100,7 @@ jobs:
           done
           echo "✗ Gateway failed health check"
           docker compose logs --tail=30 gateway dashboard
+          docker compose ps
           exit 1
 
       - name: Show service status
