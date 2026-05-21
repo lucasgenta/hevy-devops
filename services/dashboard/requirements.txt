@@ -6,4 +6,4 @@ matplotlib>=3.7
 seaborn>=0.12
 streamlit>=1.35
 plotly>=5.18
-asana>=5.0.0
+asana>=5.2.4
