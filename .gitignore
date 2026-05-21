@@ -26,7 +26,13 @@ venv/
 .DS_Store
 
 # --- Runtime data (excluded by design — use Docker volumes) ---
-/data/raw/*.json
+data/raw/
+data/ai_history/
+data/meal-plans/
+data/meal_bot_history/
+
+# --- Generated reports ---
+reports/
 
 # --- Docker ---
 .docker/
