@@ -21,10 +21,10 @@ _PROJECT_ROOT = _HERE.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from hevy.env import load_dotenv
+from hevy.env import load_dotenv  # noqa: E402
 load_dotenv()
 
-from hevy import HevyClient, HevyScraper, JsonStorage
+from hevy import HevyClient, HevyScraper, JsonStorage  # noqa: E402
 
 
 def _build_parser() -> argparse.ArgumentParser:

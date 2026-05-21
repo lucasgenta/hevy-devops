@@ -13,15 +13,12 @@ from typing import Any
 import pandas as pd
 
 from hevy.analysis import (
-    muscle_group_balance,
-    best_set_by_exercise,
-    weekly_volume_trend,
     workouts_over_time,
 )
 from hevy.predictor import suggest_all_exercises
 from hevy.deload import deload_score
 from hevy.goals import GoalTracker
-from hevy.swaps import suggest_swaps, suggest_head_swaps
+from hevy.swaps import suggest_swaps
 
 
 def generate_report(
@@ -127,7 +124,7 @@ def format_markdown(report: dict[str, Any]) -> str:
     """Format the report as plain markdown (for console)."""
     s = report["stats"]
     lines = [
-        f"# 📊 Weekly Training Report",
+        "# 📊 Weekly Training Report",
         f"**{report['period']}** — Generated {report['generated_at'][:10]}",
         "",
         "## 📊 Stats",
@@ -226,36 +223,36 @@ def send_telegram(
     deload_icon = "⚠️" if d["needs_deload"] else "✅"
 
     lines = [
-        f"📊 Hevy Weekly Report",
-        f"",
-        f"📅 Stats",
+        "📊 Hevy Weekly Report",
+        "",
+        "📅 Stats",
         f"Workouts: {s['workouts']}",
         f"Sets: {s['total_sets']}",
         f"Volume: {s['total_volume']:,.0f} kg",
         f"Avg duration: {s.get('avg_duration', '—')}",
-        f"",
+        "",
         f"{deload_icon} Fatigue: {d['score']:.0f}/100",
     ]
 
     # Top 5 predictions
     if report["predictions"]:
-        lines.append(f"")
-        lines.append(f"🏋️ Next Session")
+        lines.append("")
+        lines.append("🏋️ Next Session")
         for p in report["predictions"][:5]:
             if p["suggested_weight_kg"]:
                 lines.append(f"• {p['exercise']}: {p['suggested_weight_kg']}kg × {p['suggested_reps']}")
 
     # Swaps
     if report["swaps"]:
-        lines.append(f"")
-        lines.append(f"🔄 Try Adding")
+        lines.append("")
+        lines.append("🔄 Try Adding")
         for sw in report["swaps"][:3]:
             lines.append(f"• {sw['suggested_exercises'][0]} (for {sw['under_targeted']})")
 
     # Goals
     if report.get("goals"):
-        lines.append(f"")
-        lines.append(f"🎯 Goals")
+        lines.append("")
+        lines.append("🎯 Goals")
         for g in report["goals"]:
             icon = "✅" if g["on_track"] else "⚠️"
             lines.append(f"{icon} {g['exercise']}: {g['current']}kg / {g['target']}kg")
@@ -303,7 +300,7 @@ def setup_telegram(bot_token: str) -> str | None:
 
         if chat_id:
             print(f"✅ Found chat: {chat.get('title', chat.get('first_name', 'Unknown'))} (ID: {chat_id})")
-            print(f"   Add this to your .env file:")
+            print("   Add this to your .env file:")
             print(f'   TELEGRAM_CHAT_ID={chat_id}')
             return str(chat_id)
         else:
@@ -322,7 +319,7 @@ def send_ntfy(report: dict[str, Any], topic: str | None = None) -> bool:
 
     d = report["deload"]
     lines = [
-        f"📊 Hevy Weekly Report",
+        "📊 Hevy Weekly Report",
         f"Workouts: {report['stats']['workouts']}",
         f"Volume: {report['stats']['total_volume']:,} kg",
         f"Fatigue: {d['score']:.0f}/100 {'⚠️' if d['needs_deload'] else '✅'}",

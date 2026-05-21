@@ -25,7 +25,6 @@ WEIGHT_INCREMENT: dict[str, float] = {
     "raise": 1.25,
     "shrug": 2.5,
     "core": 1.25,
-    "curl": 1.25,
     "triceps": 1.25,
     "biceps": 1.25,
     "shoulder": 2.5,

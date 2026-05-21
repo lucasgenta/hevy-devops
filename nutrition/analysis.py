@@ -5,7 +5,6 @@ Mirrors the patterns in hevy/analysis.py.
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta
 from typing import Any
 
 import pandas as pd

@@ -11,7 +11,6 @@ Algorithm:
 
 from __future__ import annotations
 
-import json
 import os
 import random
 from dataclasses import dataclass, field, asdict
@@ -322,11 +321,11 @@ class VerifiedMealPlanner:
 
         for _ in range(max_attempts):
             b = random.choice(breakfasts) if breakfasts else None
-            l = random.choice(lunches) if lunches else None
+            lun = random.choice(lunches) if lunches else None
             d = random.choice(dinners) if dinners else None
 
             # Check if we need a snack (breakfast+lunch+dinner < 75% target calories)
-            base_cals = (b.totals.calories if b else 0) + (l.totals.calories if l else 0) + (d.totals.calories if d else 0)
+            base_cals = (b.totals.calories if b else 0) + (lun.totals.calories if lun else 0) + (d.totals.calories if d else 0)
             need_snack = base_cals < target.calories * 0.75
 
             # Allow up to 2 snacks if calories are too low
@@ -340,8 +339,8 @@ class VerifiedMealPlanner:
             combo_totals = Macros()
             if b:
                 combo_totals += b.totals
-            if l:
-                combo_totals += l.totals
+            if lun:
+                combo_totals += lun.totals
             if d:
                 combo_totals += d.totals
             if s1:
@@ -352,7 +351,7 @@ class VerifiedMealPlanner:
             score = combo_totals.score_vs_target(target)
             if score < best_score:
                 best_score = score
-                best_combo = {"breakfast": b, "lunch": l, "dinner": d, "snack": s1, "snack2": s2}
+                best_combo = {"breakfast": b, "lunch": lun, "dinner": d, "snack": s1, "snack2": s2}
 
             # Early exit if good enough
             if score < 12:

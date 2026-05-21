@@ -125,9 +125,12 @@ def render(
 
         def _cat(g: str) -> str:
             g = g.lower()
-            if g in push: return "Push"
-            if g in pull: return "Pull"
-            if g in legs: return "Legs"
+            if g in push:
+                return "Push"
+            if g in pull:
+                return "Pull"
+            if g in legs:
+                return "Legs"
             return "Other"
 
         balance["category"] = balance["primary_muscle_group"].apply(_cat)
@@ -148,13 +151,13 @@ def render(
             if len(cat_vol) >= 3:
                 p = cat_vol[cat_vol["category"] == "Push"]["volume_kg"].values[0] if "Push" in cat_vol["category"].values else 0
                 pu = cat_vol[cat_vol["category"] == "Pull"]["volume_kg"].values[0] if "Pull" in cat_vol["category"].values else 0
-                l = cat_vol[cat_vol["category"] == "Legs"]["volume_kg"].values[0] if "Legs" in cat_vol["category"].values else 0
-                total = p + pu + l
+                leg = cat_vol[cat_vol["category"] == "Legs"]["volume_kg"].values[0] if "Legs" in cat_vol["category"].values else 0
+                total = p + pu + leg
                 if total > 0:
                     insight("Push/Pull/Legs Ratio",
                         f"Push: **{p/total*100:.0f}%** | Pull: **{pu/total*100:.0f}%** | "
-                        f"Legs: **{l/total*100:.0f}%** — "
-                        f"{'Balanced' if max(p, pu, l) / total < 0.4 else 'Consider rebalancing.'}", "⚖️")
+                        f"Legs: **{leg/total*100:.0f}%** — "
+                        f"{'Balanced' if max(p, pu, leg) / total < 0.4 else 'Consider rebalancing.'}", "⚖️")
 
     st.markdown("---")
     st.subheader("Left vs Right Symmetry")

@@ -9,9 +9,7 @@ import pandas as pd
 from hevy.analysis import (
     muscle_group_balance,
     muscle_head_balance,
-    best_set_by_exercise,
     weekly_volume_trend,
-    workouts_over_time,
 )
 from hevy.llm.providers import LLMProvider, LLMResponse
 from hevy.llm.prompts import (

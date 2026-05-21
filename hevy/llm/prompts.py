@@ -5,7 +5,6 @@ Each template generates a structured analysis request for the LLM.
 
 from __future__ import annotations
 
-import json
 from typing import Any
 
 import pandas as pd
@@ -97,7 +96,7 @@ def build_analysis_prompt(
     sections = []
 
     # Header
-    sections.append(f"## Training Overview")
+    sections.append("## Training Overview")
     sections.append(f"- Total workouts: {stats.get('workouts', 'N/A')}")
     sections.append(f"- Total sets: {stats.get('total_sets', 'N/A')}")
     sections.append(f"- Total volume: {stats.get('total_volume_kg', 'N/A'):,} kg")
@@ -106,7 +105,7 @@ def build_analysis_prompt(
     sections.append(f"- Training frequency: ~{stats.get('avg_workouts_per_week', 'N/A')} workouts/week")
 
     # Muscle group balance
-    sections.append(f"\n## Muscle Group Volume Distribution (%)")
+    sections.append("\n## Muscle Group Volume Distribution (%)")
     if muscle_balance:
         for m in muscle_balance:
             sections.append(f"- {m['primary_muscle_group']}: {m['percentage']:.1f}%")
@@ -115,7 +114,7 @@ def build_analysis_prompt(
 
     # Specific muscle head balance
     if head_balance:
-        sections.append(f"\n## Specific Muscle Head Volume Distribution (%)")
+        sections.append("\n## Specific Muscle Head Volume Distribution (%)")
         sections.append("(Volume is split among all heads targeted by each exercise)")
         top_heads = sorted(head_balance, key=lambda x: x["percentage"], reverse=True)[:20]
         for h in top_heads:
@@ -123,7 +122,7 @@ def build_analysis_prompt(
 
     # Trends
     if recent_trends:
-        sections.append(f"\n## Recent Trends")
+        sections.append("\n## Recent Trends")
         if "weekly_volume" in recent_trends:
             sections.append(f"- Current weekly volume: ~{recent_trends['weekly_volume']:,.0f} kg")
         if "volume_trend" in recent_trends:
@@ -131,21 +130,21 @@ def build_analysis_prompt(
 
     # Exercise templates available
     exercises_count = stats.get("exercise_templates_count", 0)
-    sections.append(f"\n## Available Exercises")
+    sections.append("\n## Available Exercises")
     sections.append(f"- Exercise library: {exercises_count} templates")
 
     # User's routines
     if routines_summary:
-        sections.append(f"\n## Current Routines / Split")
+        sections.append("\n## Current Routines / Split")
         sections.append(routines_summary)
         sections.append("")
 
     # User goal
-    sections.append(f"\n## User Goal")
+    sections.append("\n## User Goal")
     sections.append(goals)
 
     # Request
-    sections.append(f"\n## Requested Analysis")
+    sections.append("\n## Requested Analysis")
     sections.append("Based on the data above, please provide:")
 
     analysis_points = [

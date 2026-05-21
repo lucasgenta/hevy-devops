@@ -39,7 +39,7 @@ def main() -> None:
     print(f"   PWA dir:    {PWA_DIR}")
     print()
     print(f"   📱 Open on Android: http://YOUR_SERVER_IP:{STREAMLIT_PORT}")
-    print(f"   📱 Install as app:  Chrome menu → 'Add to Home screen'")
+    print("   📱 Install as app:  Chrome menu → 'Add to Home screen'")
     print()
 
     # Streamlit will auto-detect files in the working directory's static folder

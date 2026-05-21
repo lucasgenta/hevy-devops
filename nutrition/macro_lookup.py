@@ -11,11 +11,8 @@ Results are cached to avoid redundant API calls.
 from __future__ import annotations
 
 import json
-import os
-import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import Any
 
 import httpx
 
@@ -218,7 +215,6 @@ def lookup_ingredient(
 
 def _lookup_usda(query: str) -> MacroResult | None:
     """Query USDA FoodData Central API for ingredient macros."""
-    import httpx
 
     # Map common Dutch ingredients to English for USDA search
     nl_to_en = {
@@ -243,7 +239,7 @@ def _lookup_usda(query: str) -> MacroResult | None:
     }
 
     search_query = nl_to_en.get(query.split()[0], query)
-    url = f"https://api.nal.usda.gov/fdc/v1/foods/search"
+    url = "https://api.nal.usda.gov/fdc/v1/foods/search"
     params = {
         "query": search_query,
         "api_key": "DEMO_KEY",

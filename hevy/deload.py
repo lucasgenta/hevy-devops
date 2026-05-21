@@ -134,7 +134,7 @@ def deload_score(
                 factors.append({
                     "factor": "high_rpe",
                     "severity": "high",
-                    f"detail": f"Average RPE of {avg_rpe:.1f} in recent sets — high intensity.",
+                    "detail": f"Average RPE of {avg_rpe:.1f} in recent sets — high intensity.",
                 })
             elif avg_rpe >= 8:
                 score += 5

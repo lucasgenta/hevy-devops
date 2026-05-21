@@ -28,7 +28,7 @@ from typing import Any
 import httpx
 
 from hevy.env import load_dotenv
-from nutrition.analysis import daily_totals, macro_percentages, weekly_averages, period_totals
+from nutrition.analysis import daily_totals, macro_percentages, period_totals
 from nutrition.models import FoodItem, MealEntry
 from nutrition.storage import NutritionStorage
 
@@ -591,15 +591,15 @@ class MealLoggerBot:
 
         lines = [
             f"📊 *Today's Nutrition ({today_str})*",
-            f"",
+            "",
             f"🔥 *{totals['energy_kcal']:.0f} kcal*",
             f"💪 Protein: {totals['protein_g']:.1f}g",
             f"🍚 Carbs:   {totals['carbs_g']:.1f}g",
             f"🧈 Fat:     {totals['fat_g']:.1f}g",
             f"🌾 Fiber:   {totals['fiber_g']:.1f}g",
-            f"",
+            "",
             f"*Macro split*: P:{macros['protein_pct']}% / C:{macros['carbs_pct']}% / F:{macros['fat_pct']}%",
-            f"",
+            "",
             f"*Meals*: {meal_counts}",
             f"🍽️ {len(entries)} total items",
         ]
@@ -626,10 +626,10 @@ class MealLoggerBot:
         avg_fat = df["fat_g"].mean()
 
         lines = [
-            f"📊 *Weekly Averages (last 7 days)*",
-            f"",
+            "📊 *Weekly Averages (last 7 days)*",
+            "",
             f"Days logged: {days_logged}/7",
-            f"",
+            "",
             f"🔥 Avg *{avg_cal:.0f} kcal*/day",
             f"💪 Avg protein: {avg_protein:.1f}g",
             f"🍚 Avg carbs:   {avg_carbs:.1f}g",

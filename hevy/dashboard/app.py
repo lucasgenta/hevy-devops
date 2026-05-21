@@ -10,17 +10,17 @@ _PROJECT_ROOT = _HERE.parents[1]
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from hevy.env import load_dotenv
+from hevy.env import load_dotenv  # noqa: E402
 load_dotenv()
 
-import pandas as pd
-import streamlit as st
+import pandas as pd  # noqa: E402
+import streamlit as st  # noqa: E402
 
-from hevy.dashboard.utils import (
+from hevy.dashboard.utils import (  # noqa: E402
     load_sets_df, load_summary_df, load_templates_df,
     load_measurements_df, load_routines_df,
 )
-from hevy.dashboard.pages import (
+from hevy.dashboard.pages import (  # noqa: E402
     overview,
     volume_trends,
     muscle_analysis,
@@ -31,7 +31,7 @@ from hevy.dashboard.pages import (
     raw_explorer,
     routine_analyzer,
 )
-from nutrition.dashboard import meal_log, nutrition_overview, ai_nutritionist_page
+from nutrition.dashboard import meal_log, nutrition_overview, ai_nutritionist_page  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Page config

@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from datetime import date, datetime
+from datetime import date
 
-import pandas as pd
 import streamlit as st
 
 from nutrition.analysis import daily_totals, macro_percentages, totals_by_meal_type

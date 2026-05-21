@@ -9,7 +9,6 @@ import plotly.graph_objects as go
 import streamlit as st
 
 from nutrition.analysis import (
-    daily_totals,
     macro_percentages,
     period_totals,
     weekly_averages,
@@ -183,6 +182,7 @@ def render(storage: NutritionStorage) -> None:
 
     # ---- Raw data table ----
     with st.expander("📋 View Raw Data"):
+        import pandas as pd
         display = df.copy()
         display["date"] = pd.to_datetime(display["date"]).dt.strftime("%b %d")
         display["kcal"] = display["energy_kcal"].round(0).astype(int)

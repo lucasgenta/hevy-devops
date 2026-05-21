@@ -9,7 +9,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-from hevy.dashboard.helpers import _COLOR_SEQ, insight
+from hevy.dashboard.helpers import _COLOR_SEQ
 from hevy.goals import GoalTracker
 from hevy.predictor import suggest_all_exercises
 from hevy.deload import deload_score
@@ -112,10 +112,14 @@ def render(
                 last = f'{p["last_weight_kg"]}kg × {p["last_reps"]}' if p["last_weight_kg"] else "—"
                 with st.container():
                     cols = st.columns([3, 2, 2, 4])
-                    with cols[0]: st.markdown(f"{icon} **{p['exercise']}**")
-                    with cols[1]: st.markdown(f"**→ {suggested}**")
-                    with cols[2]: st.caption(f"Last: {last}")
-                    with cols[3]: st.caption(p["reasoning"])
+                    with cols[0]:
+                        st.markdown(f"{icon} **{p['exercise']}**")
+                    with cols[1]:
+                        st.markdown(f"**→ {suggested}**")
+                    with cols[2]:
+                        st.caption(f"Last: {last}")
+                    with cols[3]:
+                        st.caption(p["reasoning"])
                 st.markdown("---")
         else:
             st.info("Not enough data for predictions.")

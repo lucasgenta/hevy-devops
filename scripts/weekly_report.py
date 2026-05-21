@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 from pathlib import Path
 
 _HERE = Path(__file__).resolve().parent
@@ -27,19 +26,18 @@ _PROJECT_ROOT = _HERE.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
-from hevy.env import load_dotenv
+from hevy.env import load_dotenv  # noqa: E402
 load_dotenv()
 
-import pandas as pd
 
-from hevy.transform import (
+from hevy.transform import (  # noqa: E402
     build_workout_sets_df,
     build_workout_summary_df,
     build_exercise_templates_df,
     build_routines_df,
 )
-from hevy.anatomy import AnatomyMapper
-from hevy.reporting import (
+from hevy.anatomy import AnatomyMapper  # noqa: E402
+from hevy.reporting import (  # noqa: E402
     generate_report,
     format_html,
     format_markdown,
@@ -101,7 +99,7 @@ def main() -> None:
 
     # Telegram setup (no report needed)
     if args.telegram_setup:
-        token = args.telegram_setup if args.telegram_setup != "from_env" else os.environ.get("TELEGRAM_BOT_TOKEN")
+        token = args.telegram_setup if args.telegram_setup != "from_env" else os.environ.get("TELEGRAM_BOT_TOKEN")  # noqa: F821
         if not token:
             print("❌ Pass the bot token: --telegram-setup YOUR_BOT_TOKEN")
             print("   Or set TELEGRAM_BOT_TOKEN in .env")

@@ -8,13 +8,11 @@ ingredients straight to your Asana shopping list.
 from __future__ import annotations
 
 import json
-import os
 import re
 from typing import Any
 
 from hevy.env import load_dotenv
 from nutrition.asana_shopping import AsanaShoppingList
-from nutrition.models import FoodItem, MealEntry
 from nutrition.storage import NutritionStorage
 
 load_dotenv()
@@ -169,7 +167,7 @@ class AINutritionist:
 
                     if new_items:
                         tasks_created = asana_api.add_ingredients(new_items)
-            except ValueError as e:
+            except ValueError:
                 # Asana not configured - that's ok, just return plan
                 pass
 
