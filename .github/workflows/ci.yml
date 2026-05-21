@@ -76,8 +76,8 @@ jobs:
 
       - name: Create .env for testing
         run: |
-          cat > .env << 'EOF'
-          HEVY_API_KEY=test-key-12345
+          cat > .env << EOF
+          HEVY_API_KEY=${{ secrets.HEVY_API_KEY }}
           DEEPSEEK_API_KEY=
           ASANA_ACCESS_TOKEN=
           ASANA_SHOPPING_PROJECT_GID=
