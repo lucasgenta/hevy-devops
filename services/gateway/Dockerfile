@@ -2,7 +2,7 @@
 # =============================================================================
 # Hevy Gateway — Nginx reverse proxy with load balancing
 # =============================================================================
-FROM nginx:1.27-alpine
+FROM nginx:1.31-alpine
 
 # Remove default nginx config
 RUN rm -f /etc/nginx/conf.d/default.conf
