@@ -66,6 +66,27 @@
 
 ---
 
+## 🏋️ What Is Hevy?
+
+[Hevy](https://hevy.com) is a workout tracking app with an API. This project **extends** the Hevy API into a full data platform:
+
+| Feature | What it does |
+|---------|-------------|
+| **Auto-scraping** | Pulls your workout data from the Hevy API every 6 hours — workouts, exercises, routines, body measurements |
+| **Training Dashboard** | 12-page Streamlit app with volume trends, muscle analysis, personal records, body measurements, and exercise history |
+| **AI Coach** | Deepseek-powered workout advisor that analyzes your training data and gives personalized recommendations |
+| **Predictions & Goals** | Projects when you'll hit strength goals based on historical progression curves |
+| **Routine Analysis** | Evaluates exercise selection, muscle group balance, and suggests deloads |
+| **Meal Planning** | AI-generated meal plans with macro tracking |
+| **Nutrition Tracking** | Telegram bot for logging meals, nutritional analysis dashboard |
+| **Asana Integration** | Auto-creates shopping lists from meal plans in Asana |
+| **PWA Support** | Progressive Web App manifest + service worker for mobile access |
+| **Weekly Reports** | Auto-generated training summaries with email/Telegram/ntfy delivery |
+
+This is a **real, working application** — not a toy. The DevOps stack below wraps it in production-grade infrastructure.
+
+---
+
 ## 🎯 DevOps Practices Demonstrated
 
 | Practice | Implementation |

@@ -18,6 +18,10 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  security-events: write
+
 env:
   DOCKER_BUILDKIT: 1
   COMPOSE_DOCKER_CLI_BUILD: 1
@@ -30,19 +34,16 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    container:
+      image: python:3.12-alpine
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Install ruff
-        run: pip install ruff
+        run: pip install --no-cache-dir ruff
 
       - name: Run ruff
-        run: ruff check hevy/ nutrition/ scripts/ services/ --output-format=github
+        run: ruff check hevy/ nutrition/ scripts/ --output-format=github
 
   # ---------------------------------------------------------------------------
   # Job 2: Build — verify Docker images compile
